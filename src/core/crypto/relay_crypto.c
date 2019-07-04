@@ -288,6 +288,32 @@ relay_crypto_init(relay_crypto_t *crypto,
   tor_assert(cipher_key_len != 0);
   const int cipher_key_bits = (int) cipher_key_len * 8;
 
+  // begin digest test area
+
+  // char data[1] = {5};
+  // char data2[1] = {6};
+  // char out[4] = {0,0,0,0};
+  // // debug: (unsigned char[])out
+  // crypto_digest_add_bytes(crypto->f_digest, data, 1);
+  // crypto_digest_add_bytes(crypto->f_digest, data2, 1);
+  // crypto_digest_get_digest(crypto->f_digest, out, 4);
+
+  // end digest test area
+
+
+  // begin crypt test area
+  // char key[16]= {1,2,3,4,5,6,7,8,9, 10, 11, 12, 13, 14, 15, 16};
+  // char data[10] = {1,2,3,4,5,6,7,8,9,10};
+  // // char data[509];
+
+  // crypto->f_crypto = crypto_cipher_new_with_bits(key, 128);
+  // crypto_cipher_crypt_inplace(crypto->f_crypto, data, 10);
+  // crypto->f_crypto = crypto_cipher_new_with_bits(key, 128);
+  // crypto_cipher_crypt_inplace(crypto->f_crypto, data, 10);
+
+  // end crypt test area
+
+
   crypto_digest_add_bytes(crypto->f_digest, key_data, digest_len);
   crypto_digest_add_bytes(crypto->b_digest, key_data+digest_len, digest_len);
 
